@@ -28,6 +28,9 @@ static func make(save_path: String, extension_name: String, template := MainGd.A
 	file.open(main_gd_path, File.WRITE)
 	file.store_string(main_gd.make(template))
 	file.close()
+	if template == MainGd.ADD_THEME:
+		var theme: Theme = ExtensionsApi.theme.get_theme()
+		ResourceSaver.save(save_path.plus_file("Theme.tres"), theme)
 
 #	# Step 2 : Now make Api Files
 	var err = api.generate_api_files(api_path)

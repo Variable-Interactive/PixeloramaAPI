@@ -30,7 +30,7 @@ func menu_item_clicked():
 	# Do some stuff
 	if thing_to_do == 0:
 		# get an image (For testing) from the current cel
-		var dest_img = ExtensionsApi.project.get_current_cel().get_image()
+		dest_img = ExtensionsApi.project.get_current_cel().get_image()
 		# also make a new project
 		new_project = ExtensionsApi.project.new_project([], "Test", Vector2(64, 64))
 	if thing_to_do == 1:
